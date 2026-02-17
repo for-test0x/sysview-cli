@@ -231,7 +231,7 @@ def render_network_info(console: Console) -> Panel:
     )
 
 
-def render_battery_and_temps(console: Console) -> Panel | None:
+def render_battery_and_temps(console: Console):
     """Render battery and temperature info."""
     battery = get_battery_info()
     temps = get_temperature_info()
