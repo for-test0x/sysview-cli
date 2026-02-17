@@ -30,69 +30,36 @@ SysView CLI transforms your terminal into a stunning system dashboard with color
 
 ## 🚀 Installation
 
-### Quick Install (recommended)
+Run this single command in your terminal:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/for-test0x/sysview-cli/main/install.sh | bash
 ```
 
-### Manual Install
+After installation, reload your shell:
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/for-test0x/sysview-cli.git
-cd sysview-cli
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run
-python3 -m sysview
-```
-
-### Install as command (optional)
-
-After cloning, you can create a global command:
-
-```bash
-# Create launcher
-mkdir -p ~/.local/bin
-echo '#!/bin/bash
-cd ~/sysview-cli && python3 -m sysview "$@"' > ~/.local/bin/sysview
-chmod +x ~/.local/bin/sysview
-
-# Add to PATH (if not already)
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Now just run `sysview` from anywhere.
+That's it! Now run:
+
+```bash
+sysview
+```
 
 ## 📖 Usage
 
 ```bash
-# Single snapshot dashboard
-sysview
-
-# Live monitoring (auto-refresh every 2 seconds)
-sysview --live
-
-# Custom refresh interval
-sysview --live -i 5
-
-# Export as JSON
-sysview --json
-
-# Export as HTML report
-sysview --html report.html
-
-# Show help
-sysview --help
+sysview                  # Single snapshot dashboard
+sysview --live           # Live monitoring (auto-refresh)
+sysview --live -i 5      # Refresh every 5 seconds
+sysview --json           # Output as JSON
+sysview --html report.html  # Export as HTML report
+sysview --help           # Show all options
 ```
 
 ## 📸 Preview
-
-The dashboard displays color-coded panels in your terminal:
 
 ```
 ╭──────── 📋 System Information ────────╮
@@ -123,11 +90,3 @@ Colors change based on usage: 🟢 low → 🟡 medium → 🟠 high → 🔴 cr
 ## 📝 License
 
 MIT License - See [LICENSE](LICENSE) for details.
-
-## 🤝 Contributing
-
-Contributions welcome! Open an issue or submit a pull request.
-
----
-
-**Made with ❤ by**
