@@ -6,7 +6,7 @@ import platform
 import socket
 import os
 import datetime
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Optional
 
 import psutil
 
@@ -145,7 +145,7 @@ def get_process_info(top_n: int = 10) -> List[Dict[str, Any]]:
     return processes[:top_n]
 
 
-def get_battery_info() -> Dict[str, Any] | None:
+def get_battery_info() -> Optional[Dict[str, Any]]:
     """Get battery info if available."""
     try:
         battery = psutil.sensors_battery()
@@ -160,7 +160,7 @@ def get_battery_info() -> Dict[str, Any] | None:
     return None
 
 
-def get_temperature_info() -> Dict[str, List] | None:
+def get_temperature_info() -> Optional[Dict[str, List]]:
     """Get temperature sensors if available."""
     try:
         temps = psutil.sensors_temperatures()
